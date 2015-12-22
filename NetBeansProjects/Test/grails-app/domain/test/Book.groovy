@@ -12,13 +12,14 @@ class Book {
     Double price
     
     static mapping = {
-        table name: "LIBRO"
+        table name: 'LIBRO'
         version false
-        colummns  {
-            title column : "TITULO"
-            author column: "AUTOR"
-            price column: "PRECIO"
-        }
+        id generator:'native', params:[sequence:'LIBRO_SEQ']
+          
+            title column : 'TITULO', type: String
+            author column: 'AUTOR', type: String
+            price column: 'PRECIO', type: Double
+        
     }
 
     static constraints = {
