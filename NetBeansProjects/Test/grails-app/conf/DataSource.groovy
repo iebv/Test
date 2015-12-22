@@ -4,6 +4,7 @@ dataSource {
     driverClassName = "oracle.jdbc.driver.OracleDriver"
     username = "GRAILS_USER"
     password = "S1ner4"
+    dialect = "org.hibernate.dialect.Oracle10gDialect"
 }
 hibernate {
     cache.use_second_level_cache = true
@@ -18,20 +19,20 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
+            dbCreate = "" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:oracle:thin:@54.174.139.165:1521:XE"
         }
     }
     test {
         dataSource {
-            dbCreate = "update"
-            url = "jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+            dbCreate = ""
+            url = "jdbc:oracle:thin:@54.174.139.165:1521:XE"
         }
     }
     production {
         dataSource {
-            dbCreate = "update"
-            url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+            dbCreate = ""
+            url = "jdbc:oracle:thin:@54.174.139.165:1521:XE"
             properties {
                // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation
                jmxEnabled = true
