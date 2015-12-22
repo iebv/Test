@@ -3,7 +3,7 @@ package test
 import grails.rest.Resource
 
 
-@Resource(uri='/books')
+//@Resource(uri='/books')
 class Book {
     
 
