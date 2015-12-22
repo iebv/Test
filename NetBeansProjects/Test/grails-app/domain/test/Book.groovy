@@ -8,18 +8,20 @@ class Book {
     
 
     String title
-    String author
+    Author author
     Double price
+    
+    static belongsTo = [author: Author]
     
     static mapping = {
         table name: 'LIBRO'
         version false
+        id column: 'ID' 
         id generator:'native', params:[sequence:'LIBRO_SEQ']
-          
-            title column : 'TITULO', type: String
-            author column: 'AUTOR', type: String
-            price column: 'PRECIO', type: Double
-        
+        title column : 'TITULO', type: String
+        author column: 'ID_AUTOR'
+        price column: 'PRECIO', type: Double
+
     }
 
     static constraints = {
